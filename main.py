@@ -1,5 +1,5 @@
 from typing import Optional, List
-from fastapi import FastAPI
+from fastapi import FastAPI, Path
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -22,3 +22,12 @@ async def get_users():
 async def create_user(user: User):
     users.append(user)
     return {"message": f"User {user} has been created!"}
+
+
+@app.get("/users/{id}")
+async def get_user(
+        id: int = Path(..., description="The ID of the user you want to retrieve.", gt=2)
+):
+    return users[id]
+
+# min 36:00
