@@ -21,3 +21,5 @@ app = FastAPI(
 app.include_router(router=user_router)
 app.include_router(router=course_router)
 app.include_router(router=section_router)
+
+#min59
