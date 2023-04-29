@@ -1,7 +1,7 @@
-
 from fastapi import FastAPI
 from api.users import router as user_router
-
+from api.courses import router as course_router
+from api.sections import router as section_router
 
 app = FastAPI(
     title="FastAPI LMS",
@@ -19,3 +19,5 @@ app = FastAPI(
 )
 
 app.include_router(router=user_router)
+app.include_router(router=course_router)
+app.include_router(router=section_router)
