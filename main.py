@@ -1,7 +1,12 @@
 from fastapi import FastAPI
-from api.users import router as user_router
-from api.courses import router as course_router
-from api.sections import router as section_router
+
+from api.users import users, courses, sections
+
+from db.db_setup import engine
+from db.models import user, course
+
+user.Base.metadata.create_all(bind=engine)
+course.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="FastAPI LMS",
@@ -18,8 +23,7 @@ app = FastAPI(
 
 )
 
-app.include_router(router=user_router)
-app.include_router(router=course_router)
-app.include_router(router=section_router)
+app.include_router(users.router)
+app.include_router(courses.router)
+app.include_router(sections.router)
 
-#min59
