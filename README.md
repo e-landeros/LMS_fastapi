@@ -16,15 +16,29 @@ uvicorn main:app --reload
 ``` 
 localhost:8000/docs
 ```
+# Alembic Commands. Make database migrations and upgrade or downgrade database
+```bash
+alembic revision --autogenerate -m "message"
+alembic upgrade head
+alembic downgrade base
+```
 
 ## Features
 - postgreSQL database
-- JWT authentication
 - Alembic migrations
 - Pydantic
 - SQLAlchemy models
 - FastAPI
+- REST API
+- CRUD operations
+
 
 ## Purpose
-This project is a learning management system that allows users to create courses and enroll in courses. It is a REST API that uses FastAPI and PostgreSQL. It uses JWT authentication and Alembic migrations.
-It is a work in progress and will be updated as I learn more about FastAPI and REST APIs.
+This project is a learning management system that allows users to create courses and enroll in courses. It is a REST API that uses FastAPI and PostgreSQL.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Status
+Project is: _in progress_
+
