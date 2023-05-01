@@ -13,7 +13,7 @@ uvicorn main:app --reload
 ```
 
 ## GO TO
-``` chrome
+``` 
 localhost:8000/docs
 ```
 
